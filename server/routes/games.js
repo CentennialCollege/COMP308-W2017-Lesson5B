@@ -93,4 +93,21 @@ router.post('/:id', (req, res, next) => {
 
 });
 
+// GET - process the delete by user id
+router.get('/delete/:id', (req, res, next) => {
+  // get a reference to the id from the url
+    let id = req.params.id;
+
+    game.remove({_id: id}, (err) => {
+      if(err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        // refresh the games list
+        res.redirect('/games');
+      }
+    });
+});
+
+
 module.exports = router;
