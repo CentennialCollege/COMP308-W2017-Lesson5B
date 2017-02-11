@@ -11,16 +11,16 @@ router.get('/', (req, res, next) => {
    });
 });
 
-/* GET about page. */
-router.get('/about', (req, res, next) => {
+/* GET games List page. */
+router.get('/games', (req, res, next) => {
   // find all games in the games collection
   game.find((err, games) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('content/about', {
-        title: 'About',
+      res.render('content/games', {
+        title: 'Games',
         games: games
       });
     }
@@ -29,19 +29,6 @@ router.get('/about', (req, res, next) => {
 
 });
 
-/* GET products page. */
-router.get('/projects', (req, res, next) => {
-  res.render('content/projects', {
-    title: 'Projects'
-   });
-});
-
-/* GET services page. */
-router.get('/services', (req, res, next) => {
-  res.render('content/services', {
-    title: 'Services'
-   });
-});
 
 /* GET contact page. */
 router.get('/contact', (req, res, next) => {
