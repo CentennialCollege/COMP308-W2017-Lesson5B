@@ -2,11 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let game = require('../config/game');
-
-// Global Route Variables
-let currentDate = new Date();
-  currentDate = currentDate.toLocaleTimeString();
+let game = require('../models/games');
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
