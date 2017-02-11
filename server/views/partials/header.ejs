@@ -33,10 +33,17 @@
           <li><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
         <% } %>
         <% if(title == "Games") { %>
-         <li class="active"><a href="/games"><i class="fa fa-gamepad fa-lg"></i> Games List</a></li>
+         <li class="active"><a href="/games"><i class="fa fa-gamepad fa-lg">
+         </i> Games List: <span class="badge"> <%= games.length %></span> </a></li>
+        <% } else if(title == "Add a new Game" || title == "Game Details") { %>
+          <li><a href="/games"><i class="fa fa-gamepad fa-lg">
+          </i> Games List</a></li>
         <% } else { %>
-          <li><a href="/games"><i class="fa fa-gamepad fa-lg"></i> Games List</a></li>
+          <li><a href="/games"><i class="fa fa-gamepad fa-lg">
+          </i> Games List: <span class="badge"> <%= games.length %></span></a></li>
         <% } %>
+
+
 
         <% if(title == "Contact") { %>
           <li class="active"><a href="/contact"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
