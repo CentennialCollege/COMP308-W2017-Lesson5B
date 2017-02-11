@@ -27,8 +27,6 @@ router.get('/about', (req, res, next) => {
 
   });
 
-
-
 });
 
 /* GET products page. */
