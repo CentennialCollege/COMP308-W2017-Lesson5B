@@ -11,23 +11,7 @@ router.get('/', (req, res, next) => {
    });
 });
 
-/* GET games List page. */
-router.get('/games', (req, res, next) => {
-  // find all games in the games collection
-  game.find((err, games) => {
-    if (err) {
-      return console.error(err);
-    }
-    else {
-      res.render('content/games', {
-        title: 'Games',
-        games: games
-      });
-    }
 
-  });
-
-});
 
 
 /* GET contact page. */
