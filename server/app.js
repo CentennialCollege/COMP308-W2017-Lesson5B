@@ -41,6 +41,24 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', index);
 app.use('/games', games);
 
+// Handle 404 Errors
+  app.use(function(req, res) {
+      res.status(400);
+     res.render('errors/404',{
+      title: '404: File Not Found'
+    });
+  });
+
+  // Handle 500 Errors
+  app.use(function(error, req, res, next) {
+      res.status(500);
+      res.render('errors/500', {
+        title:'500: Internal Server Error',
+        error: error
+      });
+  });
+
+/*
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   let err = new Error('Not Found');
@@ -58,5 +76,6 @@ app.use((err, req, res, next) =>{
   res.status(err.status || 500);
   res.render('error');
 });
+*/
 
 module.exports = app;
